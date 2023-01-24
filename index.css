@@ -6,19 +6,23 @@ html, body {
     overflow: auto;
 }
 
-.header {
+img {
+    height: 40px;
+    width: 40px;
+    position: relative;
+}
+
+th {
     position: sticky;
     top: 0;
     left: 0;
-}
-
-.row {
-    display: flex;
-}
-
-img, .cell {
     height: 40px;
-    width: 40px;
-    min-width: 40px;
-    position: relative;
+}
+
+table > * {
+    height: 40px;
+}
+
+table {
+    border-spacing: 0;
 }

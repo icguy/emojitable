@@ -25,23 +25,23 @@ $(() => {
     let numRows = Math.ceil(screenHeight * 1.0 / cellSize) + 1;
     let numCols = Math.ceil(screenWidth * 1.0 / cellSize) + 1;
 
-    let table = $("body");
-    let topHeader = $(`<div class="row"></div>`);
-    topHeader.append(`<div class="cell">&nbsp;</div>`);
+    let table = $("table");
+    let topHeader = $("<tr></tr>");
+    topHeader.append("<th></th>");
     for (let emoji of emojis) {
-        topHeader.append(`<img class="header" src="${getSvg(emoji)}">`);
+        topHeader.append(`<th><img src="${getSvg(emoji)}"></th>`);
     }
     table.append(topHeader);
     let idx = 0;
     let cells = [];
     for (let emoji of emojis) {
-        let row = $(`<div class="row"></div>`);
-        row.append(`<img class="header" src="${getSvg(emoji)}">`);
+        let row = $("<tr></tr>");
+        row.append(`<th><img src="${getSvg(emoji)}"></th>`);
         if (idx < numRows) {
             let rowCells = [];
             cells.push(rowCells);
             for (let c = 0; c < numCols; c++) {
-                let cell = $(`<div class="cell"><img decoding="async" loading="lazy"></div>`);
+                let cell = $(`<td><img decoding="async" loading="lazy"></td>`);
                 row.append(cell);
                 rowCells.push(cell.children());
             }
